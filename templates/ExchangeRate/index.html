@@ -1,0 +1,14 @@
+{% if latest_rate_list %}
+    <table>
+        <tr>
+            <th>日期</th>
+            <th>美元</th>
+            <th>港币</th>
+        </tr>
+        {% for rate in latest_rate_list %}
+            <tr>{{ rate.rate_date }}</tr>
+            <tr>{{ rate.usd2cny }}</tr>
+            <tr>{{ rate.hkd2cny }}</tr>
+        {% endfor %}
+    </table>
+{% endif %}
