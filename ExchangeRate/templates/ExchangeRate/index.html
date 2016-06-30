@@ -1,0 +1,27 @@
+{% extends "./ExchangeRate/base.html" %}
+
+{%block main%}
+    <div class="table-responsive">
+   <table class="table">
+      <caption>各国货币与人民币兑换率</caption>
+      <thead>
+         <tr>
+            <th>日期</th>
+            <th>美元</th>
+            <th>港币</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% if latest_rate_list %}
+            {% for rate in latest_rate_list %}
+                <tr>
+                    <td>{{ rate.rate_date }}</td>
+                    <td>{{ rate.usd2cny }}</td>
+                    <td>{{ rate.hkd2cny }}</td>
+                </tr>
+            {% endfor %}
+         {% endif %}
+      </tbody>
+   </table>
+</div>
+{% endblock main %}
