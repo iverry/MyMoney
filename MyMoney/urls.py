@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ExchangeRate/', include('ExchangeRate.urls')),
+    url(r'^$', include('Money.urls')),
 ]
